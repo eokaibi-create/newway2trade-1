@@ -1,4 +1,5 @@
 export async function onRequest(context) {
+  try {
   const { request, env } = context;
   const url = new URL(request.url);
   const method = request.method.toUpperCase();
@@ -189,6 +190,7 @@ export async function onRequest(context) {
     return { id: session.id, email: session.email, role: session.role, status: session.status };
   };
 
+  if (!env.DB) return json(500, { error: "DB binding missing" });
   await ensureSchema();
 
   if (segments[0] === "public" && segments[1] === "bootstrap") {
@@ -338,4 +340,10 @@ export async function onRequest(context) {
   }
 
   return json(404, { error: "not_found" });
+  } catch (err) {
+    return new Response(JSON.stringify({ error: "server_error", detail: String(err) }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" }
+    });
+  }
 }
