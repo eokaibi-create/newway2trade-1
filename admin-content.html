@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>内容管理 | Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo">EK</div>
+        <div>
+          <div class="brand-title">Admin Console</div>
+          <div class="brand-sub">EK'S NEW LIFE</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="admin.html">Dashboard 数据概览</a>
+        <a class="menu-item" href="admin-users.html">用户管理</a>
+        <a class="menu-item active" href="admin-content.html">内容管理</a>
+        <a class="menu-item" href="admin-products.html">产品管理</a>
+        <a class="menu-item" href="admin-crm.html">客户管理</a>
+        <a class="menu-item" href="admin-orders.html">订单管理</a>
+        <a class="menu-item" href="admin-analytics.html">报表分析</a>
+        <a class="menu-item" href="admin-media.html">文件管理</a>
+        <a class="menu-item" href="admin-i18n.html">多语言管理</a>
+        <a class="menu-item" href="admin-forms.html">联系表单管理</a>
+        <a class="menu-item" href="admin-settings.html">系统设置</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="ghost">切换语言</button>
+        <button class="primary">发布内容</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CONTENT MANAGEMENT</p>
+          <h1>内容管理</h1>
+          <p class="muted">首页、公司介绍、新闻与页面模板统一维护。</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost">SEO 设置</button>
+          <button class="primary">新建页面</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head"><h2>页面列表</h2><button class="ghost">新增</button></div>
+          <div class="table">
+            <div class="table-row table-head"><span>页面</span><span>状态</span><span>更新</span></div>
+            <div class="table-row"><span>首页</span><span class="tag">已发布</span><span>今日</span></div>
+            <div class="table-row"><span>公司介绍</span><span class="tag">已发布</span><span>昨日</span></div>
+            <div class="table-row"><span>新闻中心</span><span class="tag warn">草稿</span><span>3 天前</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>可视化编辑</h2><button class="ghost">打开编辑器</button></div>
+          <ul class="list">
+            <li>所见即所得编辑</li>
+            <li>模块化组件拖拽</li>
+            <li>图片、视频、表格支持</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>素材管理</h2><button class="ghost">上传素材</button></div>
+          <ul class="list">
+            <li>图片/视频/文档分类</li>
+            <li>快速搜索与标签</li>
+            <li>一键插入到页面</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>SEO 设置</h2><button class="ghost">管理</button></div>
+          <ul class="list">
+            <li>Title / Description 模板</li>
+            <li>OpenGraph 预览</li>
+            <li>站点地图更新</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

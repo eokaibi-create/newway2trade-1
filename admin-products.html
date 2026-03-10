@@ -1,0 +1,101 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>产品管理 | Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo">EK</div>
+        <div>
+          <div class="brand-title">Admin Console</div>
+          <div class="brand-sub">EK'S NEW LIFE</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="admin.html">Dashboard 数据概览</a>
+        <a class="menu-item" href="admin-users.html">用户管理</a>
+        <a class="menu-item" href="admin-content.html">内容管理</a>
+        <a class="menu-item active" href="admin-products.html">产品管理</a>
+        <a class="menu-item" href="admin-crm.html">客户管理</a>
+        <a class="menu-item" href="admin-orders.html">订单管理</a>
+        <a class="menu-item" href="admin-analytics.html">报表分析</a>
+        <a class="menu-item" href="admin-media.html">文件管理</a>
+        <a class="menu-item" href="admin-i18n.html">多语言管理</a>
+        <a class="menu-item" href="admin-forms.html">联系表单管理</a>
+        <a class="menu-item" href="admin-settings.html">系统设置</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="ghost">导出产品</button>
+        <button class="primary">新增产品</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">PRODUCT MANAGEMENT</p>
+          <h1>产品管理</h1>
+          <p class="muted">分类、标签、库存、颜色、图片与价格统一管理。</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost">批量导入</button>
+          <button class="primary">新增产品</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head"><h2>产品列表</h2><button class="ghost">筛选</button></div>
+          <div class="table">
+            <div class="table-row table-head"><span>产品</span><span>库存</span><span>状态</span></div>
+            <div class="table-row"><span>一次性电子烟</span><span>240</span><span class="tag">上架</span></div>
+            <div class="table-row"><span>家具套装</span><span>45</span><span class="tag">上架</span></div>
+            <div class="table-row"><span>储物柜系统</span><span>12</span><span class="tag warn">低库存</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>产品信息</h2><button class="ghost">编辑</button></div>
+          <div class="form">
+            <label>产品名称</label>
+            <input type="text" placeholder="输入产品名称" />
+            <label>分类</label>
+            <select><option>电子烟</option><option>物流服务</option><option>家具</option></select>
+            <label>颜色</label>
+            <input type="text" placeholder="如：黑/白/银" />
+            <label>库存</label>
+            <input type="number" placeholder="库存数量" />
+            <label>价格</label>
+            <input type="text" placeholder="登录可见 / 可填区间" />
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>图片与视频</h2><button class="ghost">上传</button></div>
+          <div class="media-grid">
+            <div class="media-card">主图</div>
+            <div class="media-card">细节图</div>
+            <div class="media-card">规格图</div>
+            <div class="media-card">视频</div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>推荐/热销设置</h2><button class="ghost">配置</button></div>
+          <ul class="list">
+            <li>首页推荐位设置</li>
+            <li>热销产品标签</li>
+            <li>新品上架提醒</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

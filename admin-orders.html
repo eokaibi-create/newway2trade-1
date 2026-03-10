@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>订单管理 | Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo">EK</div>
+        <div>
+          <div class="brand-title">Admin Console</div>
+          <div class="brand-sub">EK'S NEW LIFE</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="admin.html">Dashboard 数据概览</a>
+        <a class="menu-item" href="admin-users.html">用户管理</a>
+        <a class="menu-item" href="admin-content.html">内容管理</a>
+        <a class="menu-item" href="admin-products.html">产品管理</a>
+        <a class="menu-item" href="admin-crm.html">客户管理</a>
+        <a class="menu-item active" href="admin-orders.html">订单管理</a>
+        <a class="menu-item" href="admin-analytics.html">报表分析</a>
+        <a class="menu-item" href="admin-media.html">文件管理</a>
+        <a class="menu-item" href="admin-i18n.html">多语言管理</a>
+        <a class="menu-item" href="admin-forms.html">联系表单管理</a>
+        <a class="menu-item" href="admin-settings.html">系统设置</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="ghost">导出订单</button>
+        <button class="primary">创建订单</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">ORDER MANAGEMENT</p>
+          <h1>订单管理</h1>
+          <p class="muted">订单状态、价格、物流与发票信息。</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost">批量导出</button>
+          <button class="primary">新增订单</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head"><h2>订单列表</h2><button class="ghost">筛选</button></div>
+          <div class="table">
+            <div class="table-row table-head"><span>订单号</span><span>金额</span><span>状态</span></div>
+            <div class="table-row"><span>OD-2910</span><span>$12,400</span><span class="tag">已确认</span></div>
+            <div class="table-row"><span>OD-2904</span><span>$8,300</span><span class="tag">发货中</span></div>
+            <div class="table-row"><span>OD-2899</span><span>$6,700</span><span class="tag warn">待付款</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>物流信息</h2><button class="ghost">更新</button></div>
+          <ul class="list">
+            <li>运输方式：海运</li>
+            <li>当前节点：港口装柜</li>
+            <li>预计到达：2026-03-29</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>费用与折扣</h2><button class="ghost">编辑</button></div>
+          <ul class="list">
+            <li>产品合计：$10,800</li>
+            <li>物流费用：$1,200</li>
+            <li>折扣：-$400</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>发票与附件</h2><button class="ghost">上传</button></div>
+          <ul class="list">
+            <li>发票 PDF</li>
+            <li>装箱单</li>
+            <li>报关文件</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

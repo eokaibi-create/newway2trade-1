@@ -1,0 +1,95 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>系统设置 | Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo">EK</div>
+        <div>
+          <div class="brand-title">Admin Console</div>
+          <div class="brand-sub">EK'S NEW LIFE</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="admin.html">Dashboard 数据概览</a>
+        <a class="menu-item" href="admin-users.html">用户管理</a>
+        <a class="menu-item" href="admin-content.html">内容管理</a>
+        <a class="menu-item" href="admin-products.html">产品管理</a>
+        <a class="menu-item" href="admin-crm.html">客户管理</a>
+        <a class="menu-item" href="admin-orders.html">订单管理</a>
+        <a class="menu-item" href="admin-analytics.html">报表分析</a>
+        <a class="menu-item" href="admin-media.html">文件管理</a>
+        <a class="menu-item" href="admin-i18n.html">多语言管理</a>
+        <a class="menu-item" href="admin-forms.html">联系表单管理</a>
+        <a class="menu-item active" href="admin-settings.html">系统设置</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="ghost">备份</button>
+        <button class="primary">保存设置</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">SYSTEM SETTINGS</p>
+          <h1>系统设置</h1>
+          <p class="muted">品牌信息、域名、邮件与权限。</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost">查看日志</button>
+          <button class="primary">保存</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head"><h2>网站基本信息</h2><button class="ghost">编辑</button></div>
+          <div class="form">
+            <label>公司名称</label>
+            <input type="text" placeholder="EK'S NEW LIFE" />
+            <label>Logo</label>
+            <input type="text" placeholder="上传 Logo" />
+            <label>联系方式</label>
+            <input type="text" placeholder="WhatsApp / WeChat / Email" />
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>域名与 SSL</h2><button class="ghost">配置</button></div>
+          <ul class="list">
+            <li>域名：newway2trade.com</li>
+            <li>SSL：已启用</li>
+            <li>CDN：已开启</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>邮件服务器</h2><button class="ghost">设置</button></div>
+          <ul class="list">
+            <li>SMTP 配置</li>
+            <li>自动回复模板</li>
+            <li>测试邮件</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>权限管理</h2><button class="ghost">管理</button></div>
+          <ul class="list">
+            <li>角色权限配置</li>
+            <li>访问限制策略</li>
+            <li>日志审计</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

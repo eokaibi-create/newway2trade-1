@@ -1,0 +1,94 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>客户管理 | Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Sora:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="logo">EK</div>
+        <div>
+          <div class="brand-title">Admin Console</div>
+          <div class="brand-sub">EK'S NEW LIFE</div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu-item" href="admin.html">Dashboard 数据概览</a>
+        <a class="menu-item" href="admin-users.html">用户管理</a>
+        <a class="menu-item" href="admin-content.html">内容管理</a>
+        <a class="menu-item" href="admin-products.html">产品管理</a>
+        <a class="menu-item active" href="admin-crm.html">客户管理</a>
+        <a class="menu-item" href="admin-orders.html">订单管理</a>
+        <a class="menu-item" href="admin-analytics.html">报表分析</a>
+        <a class="menu-item" href="admin-media.html">文件管理</a>
+        <a class="menu-item" href="admin-i18n.html">多语言管理</a>
+        <a class="menu-item" href="admin-forms.html">联系表单管理</a>
+        <a class="menu-item" href="admin-settings.html">系统设置</a>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="ghost">导出客户</button>
+        <button class="primary">新增客户</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">CRM / CUSTOMER</p>
+          <h1>客户管理</h1>
+          <p class="muted">客户资料、询盘历史与跟进记录。</p>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost">群发消息</button>
+          <button class="primary">新增客户</button>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <div class="panel-head"><h2>客户列表</h2><button class="ghost">筛选</button></div>
+          <div class="table">
+            <div class="table-row table-head"><span>客户</span><span>地区</span><span>状态</span></div>
+            <div class="table-row"><span>Global Trade LLC</span><span>北美</span><span class="tag">已合作</span></div>
+            <div class="table-row"><span>Euro Supply</span><span>欧洲</span><span class="tag">潜在</span></div>
+            <div class="table-row"><span>ME Logistics</span><span>中东</span><span class="tag warn">待跟进</span></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>客户详情</h2><button class="ghost">编辑</button></div>
+          <ul class="list">
+            <li>公司：Global Trade LLC</li>
+            <li>联系人：Andrew M.</li>
+            <li>邮箱：trade@company.com</li>
+            <li>电话：+1 202-xxx-xxxx</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>询盘历史</h2><button class="ghost">查看</button></div>
+          <ul class="list">
+            <li>2026-03-11 · 电子烟询价</li>
+            <li>2026-03-04 · 物流服务报价</li>
+            <li>2026-02-20 · 家具项目合作</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head"><h2>跟进记录</h2><button class="ghost">新增</button></div>
+          <ul class="list">
+            <li>已发送报价单，等待反馈</li>
+            <li>安排视频会议</li>
+            <li>确认样品与运输方式</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
