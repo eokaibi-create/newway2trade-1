@@ -73,41 +73,41 @@ export async function onRequest(context) {
   };
 
   const ensureSchema = async () => {
-    await env.DB.exec(`
-      CREATE TABLE IF NOT EXISTS users (
+    const statements = [
+      `CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         email TEXT UNIQUE NOT NULL,
         password_hash TEXT NOT NULL,
         role TEXT NOT NULL,
         status TEXT NOT NULL,
         created_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS sessions (
+      );`,
+      `CREATE TABLE IF NOT EXISTS sessions (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         token TEXT UNIQUE NOT NULL,
         expires_at TEXT NOT NULL,
         created_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS site_settings (
+      );`,
+      `CREATE TABLE IF NOT EXISTS site_settings (
         key TEXT PRIMARY KEY,
         value TEXT NOT NULL,
         public INTEGER NOT NULL DEFAULT 0,
         updated_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS categories (
+      );`,
+      `CREATE TABLE IF NOT EXISTS categories (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         status TEXT NOT NULL,
         created_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS category_i18n (
+      );`,
+      `CREATE TABLE IF NOT EXISTS category_i18n (
         category_id INTEGER NOT NULL,
         lang TEXT NOT NULL,
         name TEXT NOT NULL,
         description TEXT,
         PRIMARY KEY (category_id, lang)
-      );
-      CREATE TABLE IF NOT EXISTS products (
+      );`,
+      `CREATE TABLE IF NOT EXISTS products (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         sku TEXT,
         status TEXT NOT NULL,
@@ -115,27 +115,27 @@ export async function onRequest(context) {
         price_visible INTEGER NOT NULL DEFAULT 0,
         created_at TEXT NOT NULL,
         updated_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS product_i18n (
+      );`,
+      `CREATE TABLE IF NOT EXISTS product_i18n (
         product_id INTEGER NOT NULL,
         lang TEXT NOT NULL,
         name TEXT NOT NULL,
         description TEXT,
         PRIMARY KEY (product_id, lang)
-      );
-      CREATE TABLE IF NOT EXISTS product_variants (
+      );`,
+      `CREATE TABLE IF NOT EXISTS product_variants (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         product_id INTEGER NOT NULL,
         color TEXT,
         stock INTEGER
-      );
-      CREATE TABLE IF NOT EXISTS product_media (
+      );`,
+      `CREATE TABLE IF NOT EXISTS product_media (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         product_id INTEGER NOT NULL,
         media_key TEXT NOT NULL,
         sort_order INTEGER DEFAULT 0
-      );
-      CREATE TABLE IF NOT EXISTS customers (
+      );`,
+      `CREATE TABLE IF NOT EXISTS customers (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         company TEXT,
@@ -144,30 +144,34 @@ export async function onRequest(context) {
         region TEXT,
         notes TEXT,
         created_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS orders (
+      );`,
+      `CREATE TABLE IF NOT EXISTS orders (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         customer_name TEXT,
         customer_email TEXT,
         status TEXT,
         total TEXT,
         created_at TEXT NOT NULL
-      );
-      CREATE TABLE IF NOT EXISTS order_items (
+      );`,
+      `CREATE TABLE IF NOT EXISTS order_items (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         order_id INTEGER NOT NULL,
         product_id INTEGER,
         quantity INTEGER,
         price TEXT
-      );
-      CREATE TABLE IF NOT EXISTS contact_messages (
+      );`,
+      `CREATE TABLE IF NOT EXISTS contact_messages (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         email TEXT,
         message TEXT,
         created_at TEXT NOT NULL
-      );
-    `);
+      );`
+    ];
+
+    for (const stmt of statements) {
+      await env.DB.exec(stmt);
+    }
 
     const userCount = await env.DB.prepare("SELECT COUNT(*) as c FROM users").first();
     if (userCount && userCount.c === 0 && env.ADMIN_EMAIL && env.ADMIN_PASSWORD) {
